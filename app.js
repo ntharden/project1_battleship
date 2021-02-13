@@ -18,3 +18,24 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 	let currentPlayer = "user" // user always starts
 
 	const width = 10 // 10 units across for board
+
+	// Create Board
+	function createBoard(grid, squares) {
+		for (let i = 0; i < width * width; i++) { // loop will run from 0-99
+			const square = document.createElement('div') // creating a div called square for every iteration
+			square.dataset.id = i // giving an html id of the array number for every div
+			grid.appendChild(square) // attaching square div to whatever is inputed for grid
+			squares.push(square) // pushing square to whatever is inputed for squares
+		}
+	}
+	createBoard(userGrid, userSquares) // creates grid of 100 squares and array from 0-99
+	createBoard(computerGrid, computerSquares) // creates grid of 100 squares and array from 0-99
+
+
+
+
+
+
+
+
+
