@@ -301,7 +301,12 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 			gameOver()
 		}
 	}
+	function gameOver() {
+		isGameOver = true
+		startButton.removeEventListener('click', playGame)
+	}
 
+})
 
 
 
