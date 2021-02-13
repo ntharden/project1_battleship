@@ -70,6 +70,28 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 		}
 	]
 
+	// Draw the computer's ships in random locations
+	function generate(ship) {
+		let randomDirection = Math.floor(Math.random() * ship.directions.length) // generates a number 0-1
+		let current = ship.directions[randomDirection] // makes current equal left-right or up-down direction
+		if (randomDirection === 0) direction = 1
+		if (randomDirection === 1) direction = 10
+		let randomStart = Math.abs(Math.floor(Math.random() * computerSquares.length - (ship.directions[0].length * direction))) // gives random starting point for ship
+	
+		const isTaken = current.some(index => computerSquares[randomStart + index].classList.contains('taken')) // will prevent ships from overlapping each other
+		const isAtRightEdge = current.some(index => (randomStart + index) % width === width - 1)
+		const isAtLeftEdge = current.some(index => (randomStart + index) % width === 0)
+
+		if (!isTaken && !isAtRightEdge && !isAtLeftEdge) current.forEach(index => computerSquares[randomStart + index].classList.add('taken', ship.name))
+
+		else generate(ship) // will rerun code until all ships are properly placed on the board
+	}
+
+	generate(shipArray[0])
+	generate(shipArray[1])
+	generate(shipArray[2])
+	generate(shipArray[3])
+	generate(shipArray[4])
 
 
 
