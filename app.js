@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 		}
 
 	function checkForWins() { // will alert for sunk ships and whether game is won
-		if (destroyerCount === 2) {
+		if (cruiserCount === 2) {
 			window.alert('You sunk the computers destroyer')
 			destroyerCount = 10
 		}
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 			window.alert('You sunk sthe computers submarine')
 			submarineCount = 10
 		}
-		if (cruiserCount === 3) {
+		if (destroyerCount === 3) {
 			window.alert('You sunk the computers cruiser')
 			cruiserCount = 10
 		}
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 			window.alert('You sunk the computers carrier')
 			carrierCount = 10
 		}
-		if (cpuDestroyerCount === 2) {
+		if (cpuCruiserCount === 2) {
 			window.alert('The computer sunk your destroyer')
 			cpuDestroyerCount = 10
 		}
@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 			window.alert('The computer sunk your submarine')
 			cpuSubmarineCount = 10
 		}
-		if (cpuCruiserCount === 3) {
+		if (cpuDestroyerCount === 3) {
 			window.alert('The computer sunk your cruiser')
 			cpuCruiserCount = 10
 		}
@@ -292,11 +292,11 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 			window.alert('The computer sunk your carrier')
 			cpuCarrierCount = 10
 		}
-		if ((destroyerCount + submarineCount + cruiserCount + battleshipCount + carrierCount) === 50) {
+		if ((cruiserCount + submarineCount + destroyerCount + battleshipCount + carrierCount) === 50) {
 			window.alert("You Win!")
 			gameOver()
 		}
-		if ((cpuDestroyerCount + cpuSubmarineCount + cpuCruiserCount + cpuBattleshipCount + cpuCarrierCount) === 50) {
+		if ((cpuCruiserCount + cpuSubmarineCount + cpuDestroyerCount + cpuBattleshipCount + cpuCarrierCount) === 50) {
 			window.alert("Computer Wins")
 			gameOver()
 		}
