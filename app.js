@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 
 
 	function computerGo() {
-		let random = Math.floor(Math.random() * userSquares.length)
+		let random = Math.floor(Math.random() * userSquares.length) // creates random integer that will allow computer to randomly attack a square on the board
 		if (!userSquares[random].classList.contains('boom')) {
 			if (userSquares[random].classList.contains('cruiser')) cpuCruiserCount++
 			if (userSquares[random].classList.contains('submarine')) cpuSubmarineCount++
@@ -251,7 +251,56 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 	turnDisplay.innerHTML = 'Your Turn'
 		}
 
-
+	function checkForWins() { // will alert for sunk ships and whether game is won
+		if (destroyerCount === 2) {
+			window.alert('You sunk the computers destroyer')
+			destroyerCount = 10
+		}
+		if (submarineCount === 3) {
+			window.alert('You sunk sthe computers submarine')
+			submarineCount = 10
+		}
+		if (cruiserCount === 3) {
+			window.alert('You sunk the computers cruiser')
+			cruiserCount = 10
+		}
+		if (battleshipCount === 4) {
+			window.alert('You sunk the computers battleship')
+			battleshipCount = 10
+		}
+		if (carrierCount === 5) {
+			window.alert('You sunk the computers carrier')
+			carrierCount = 10
+		}
+		if (cpuDestroyerCount === 2) {
+			window.alert('The computer sunk your destroyer')
+			cpuDestroyerCount = 10
+		}
+		if (cpuSubmarineCount === 3) {
+			window.alert('The computer sunk your submarine')
+			cpuSubmarineCount = 10
+		}
+		if (cpuCruiserCount === 3) {
+			window.alert('The computer sunk your cruiser')
+			cpuCruiserCount = 10
+		}
+		if (cpuBattleshipCount === 4) {
+			window.alert('The computer sunk your battleship')
+			cpuBattleshipCount = 10
+		}
+		if (cpuCarrierCount === 5) {
+			window.alert('The computer sunk your carrier')
+			cpuCarrierCount = 10
+		}
+		if ((destroyerCount + submarineCount + cruiserCount + battleshipCount + carrierCount) === 50) {
+			window.alert("You Win!")
+			gameOver()
+		}
+		if ((cpuDestroyerCount + cpuSubmarineCount + cpuCruiserCount + cpuBattleshipCount + cpuCarrierCount) === 50) {
+			window.alert("Computer Wins")
+			gameOver()
+		}
+	}
 
 
 
