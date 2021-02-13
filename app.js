@@ -97,9 +97,9 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 	function rotate() {
 		if (isHorizontal) {
 			// will toggle all ships to vertical container if rotate() is called and isHorizontal = true
-			destroyer.classList.toggle('destroyer-container-vertical')
+			destroyer.classList.toggle('cruiser-container-vertical')
 			submarine.classList.toggle('submarine-container-vertical')
-			cruiser.classList.toggle('cruiser-container-vertical')
+			cruiser.classList.toggle('destroyer-container-vertical')
 			battleship.classList.toggle('battleship-container-vertical')
 			carrier.classList.toggle('carrier-container-vertical')
 			isHorizontal = false // ships are now vertical
@@ -107,9 +107,9 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 			return
 		} 
 		if (!isHorizontal) {
-			destroyer.classList.toggle('destroyer-container-vertical')
+			destroyer.classList.toggle('cruiser-container-vertical')
 			submarine.classList.toggle('submarine-container-vertical')
-			cruiser.classList.toggle('cruiser-container-vertical')
+			cruiser.classList.toggle('destroyer-container-vertical')
 			battleship.classList.toggle('battleship-container-vertical')
 			carrier.classList.toggle('carrier-container-vertical')
 			isHorizontal = true
@@ -200,5 +200,37 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 		}
 	}
 	startButton.addEventListener('click', playGame) // once start button is pushed, play game will run
+
+	let destroyerCount = 0
+	let submarineCount = 0
+	let cruiserCount = 0
+	let battleshipCount = 0
+	let carrierCount = 0
+
+	function revealSquare(square) {
+		if (!square.classList.contains('boom')){
+			// keeps count of whether ships have been hit
+			if (square.classList.contains('cruiser')) destroyerCount++
+			if (square.classList.contains('submarine')) submarineCount++
+			if (square.classList.contains('destroyer')) cruiserCount++
+			if (square.classList.contains('battleship')) battleshipCount++
+			if (square.classList.contains('carrier')) carrierCount++
+		}
+		if (square.classList.contains('taken')) {
+			square.classList.add('boom') // if ship is on square, gives class of boom to square
+		} else {
+			square.classList.add('miss') // otherwise miss is given
+		}
+		currentPlayer = 'computer'
+		playGame() // restart game function
+	}
+
+
+
+
+
+
+
+
 
 
