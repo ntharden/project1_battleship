@@ -31,7 +31,44 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 	createBoard(userGrid, userSquares) // creates grid of 100 squares and array from 0-99
 	createBoard(computerGrid, computerSquares) // creates grid of 100 squares and array from 0-99
 
-
+	// Ships
+	const shipArray = [ // creates array of objects called shipArray
+		{
+			name: 'destroyer',
+			directions: [
+				[0, 1], // gives left-right orientation by taking two squares next to each other
+				[0, width] // gives up-down orientation by taking two squares on top of each other
+			]
+		},
+		{
+			name: 'submarine',
+			directions: [
+				[0, 1, 2],
+				[0, width, width*2]
+			]
+		},
+		{
+			name: 'cruiser',
+			directions: [
+				[0, 1, 2],
+				[0, width, width*2]
+			]
+		},
+		{
+			name: 'battleship',
+			directions: [
+				[0, 1, 2, 3],
+				[0, width, width*2, width*3]
+			]
+		},
+		{
+			name: 'carrier',
+			directions: [
+				[0, 1, 2, 3, 4], // left-right would take up squares 0-4 on the grid
+				[0, width, width*2, width*3, width*4] // up-down would take up squares 0, 10, 20, 30, 40 on the grid
+			]
+		}
+	]
 
 
 
