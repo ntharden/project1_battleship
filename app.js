@@ -1,0 +1,20 @@
+document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM on the document from here on out
+	const userGrid = document.querySelector('.grid-user') // easier way to call grid-user
+	const computerGrid = document.querySelector('.grid-computer') // easier way to call grid-computer
+	const displayGrid = document.querySelector('.grid-display') // easier way to call grid-display
+	const ships = document.querySelectorAll('.ship') // allows all ships to be edited at once
+	const cruiser = document.querySelector('.cruiser-container') // allows all cruisers to be edited at once
+	const submarine = document.querySelector('.submarine-container') // allows all submarines to be edited at once
+	const destroyer = document.querySelector('.destroyer-container') // allows all destroyers to be edited at once
+	const battleship = document.querySelector('.battleship-container') // allows all battleships to be edited at once
+	const carrier = document.querySelector('.carrier-container') // allows all carriers to be edited at once
+	const startButton = document.querySelector('#start') // once clicked, will initialize the game
+	const rotateButton = document.querySelector('#rotate') // button that allows user to rotate ships during placement
+	const turnDisplay = document.querySelector('#whose-turn') // allows turn botton to change values between user and computer
+	const userSquares = [] // this array holds the values of all user squares
+	const computerSquares = [] // this array holds the values of all computer squares
+	let isHorizontal = true // ships will start horizontally
+	let isGameOver = false // will remain false as long as game is winnable
+	let currentPlayer = "user" // user always starts
+
+	const width = 10 // 10 units across for board

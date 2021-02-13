@@ -1,0 +1,154 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+	display: flex;
+}
+
+.grid-user {
+	width: 400px;
+	height: 400px;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: blue;
+	margin: 20px;
+}
+
+.grid div {
+	width: 40px;
+	height: 40px;
+}
+
+.grid-computer {
+	width: 400px;
+	height: 400px;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: grey;
+	margin: 20px;
+}
+
+.grid-display {
+	width: 400px;
+	height: 400px;
+	margin: 20px;
+}
+
+.cruiser-container {
+	width: 80px;
+	height: 40px;
+	background-color: grey;
+	margin: 10px;
+	display: flex;
+}
+
+.cruiser-container-vertical {
+	width: 40px;
+	height: 80px;
+	background-color: grey;
+	margin: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.submarine-container {
+	width: 120px;
+	height: 40px;
+	background-color: grey;
+	margin: 10px;
+	display: flex;
+}
+
+.submarine-container-vertical {
+	width: 40px;
+	height: 120px;
+	background-color: grey;
+	margin: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.destroyer-container {
+	width: 120px;
+	height: 40px;
+	background-color: grey;
+	margin: 10px;
+	display: flex;
+}
+
+.destroyer-container-vertical {
+	width: 40px;
+	height: 120px;
+	background-color: grey;
+	margin: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.battleship-container {
+	width: 160px;
+	height: 40px;
+	background-color: grey;
+	margin: 10px;
+	display: flex;
+}
+
+.battleship-container-vertical {
+	width: 40px;
+	height: 160px;
+	background-color: grey;
+	margin: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.carrier-container {
+	width: 200px;
+	height: 40px;
+	background-color: grey;
+	margin: 10px;
+	display: flex;
+}
+
+.carrier-container-vertical {
+	width: 40px;
+	height: 200px;
+	background-color: grey;
+	margin: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.ship div {
+	width: 40px;
+	height: 40px;
+}
+
+.cruiser {
+	background-color:grey;
+}
+
+.submarine {
+	background-color:grey;
+}
+
+.destroyer {
+	background-color:grey;
+}
+
+.battleship {
+	background-color:grey;
+}
+
+.carrier {
+	background-color:grey;
+}
+
+.boom {
+	background-color: red;
+}
+
+.miss {
+	background-color: black;
+}
