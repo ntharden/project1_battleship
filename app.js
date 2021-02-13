@@ -201,9 +201,9 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 	}
 	startButton.addEventListener('click', playGame) // once start button is pushed, play game will run
 
-	let destroyerCount = 0
-	let submarineCount = 0
 	let cruiserCount = 0
+	let submarineCount = 0
+	let destroyerCount = 0
 	let battleshipCount = 0
 	let carrierCount = 0
 
@@ -225,6 +225,31 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 		playGame() // restart game function
 	}
 
+	let cpuCruiserCount = 0
+	let cpuSubmarineCount = 0
+	let cpuDestroyerCount = 0
+	let cpuBattleshipCount = 0
+	let cpuCarrierCount = 0
+
+
+	function computerGo() {
+		let random = Math.floor(Math.random() * userSquares.length)
+		if (!userSquares[random].classList.contains('boom')) {
+			if (userSquares[random].classList.contains('cruiser')) cpuCruiserCount++
+			if (userSquares[random].classList.contains('submarine')) cpuSubmarineCount++
+			if (userSquares[random].classList.contains('destroyer')) cpuDestroyerCount++
+			if (userSquares[random].classList.contains('battleship')) cpuBattleshipCount++
+			if (userSquares[random].classList.contains('carrier')) cpuCarrierCount++
+		} // else computerGo()
+		if (userSquares[random].classList.contains('taken')) {
+			userSquares[random].classList.add('boom')
+		} else {
+			userSquares[random].classList.add('miss')
+		}	
+		console.log(random)
+	currentPlayer = 'user'
+	turnDisplay.innerHTML = 'Your Turn'
+		}
 
 
 
