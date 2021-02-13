@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 	// Ships
 	const shipArray = [ // creates array of objects called shipArray
 		{
-			name: 'destroyer',
+			name: 'cruiser',
 			directions: [
 				[0, 1], // gives left-right orientation by taking two squares next to each other
 				[0, width] // gives up-down orientation by taking two squares on top of each other
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 			]
 		},
 		{
-			name: 'cruiser',
+			name: 'destroyer',
 			directions: [
 				[0, 1, 2],
 				[0, width, width*2]
@@ -184,5 +184,21 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 		
 	}
 
+	// Game Logic
+	function playGame() {
+		if (isGameOver) return
+		checkForWins() // function that will look for sunk ships
+		if (currentPlayer === 'user') {
+			turnDisplay.innerHTML = 'Your Turn'
+			computerSquares.forEach(square => square.addEventListener('click', function(e) {
+				revealSquare(square) // will run a function for user to click on a square and reveal whether it is a ship or not
+			}))
+		}
+		if (currentPlayer === 'computer') {
+			turnDisplay.innerHTML = 'Computers Turn'
+			setTimeout (computerGo, 1000) // pause before computer's turn
+		}
+	}
+	startButton.addEventListener('click', playGame) // once start button is pushed, play game will run
 
 
