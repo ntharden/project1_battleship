@@ -93,6 +93,31 @@ document.addEventListener('DOMContentLoaded', () =>{ // gives ability to use DOM
 	generate(shipArray[3])
 	generate(shipArray[4])
 
+	// rotate the ships
+	function rotate() {
+		if (isHorizontal) {
+			// will toggle all ships to vertical container if rotate() is called and isHorizontal = true
+			destroyer.classList.toggle('destroyer-container-vertical')
+			submarine.classList.toggle('submarine-container-vertical')
+			cruiser.classList.toggle('cruiser-container-vertical')
+			battleship.classList.toggle('battleship-container-vertical')
+			carrier.classList.toggle('carrier-container-vertical')
+			isHorizontal = false // ships are now vertical
+			// console.log(isHorizontal)
+			return
+		} 
+		if (!isHorizontal) {
+			destroyer.classList.toggle('destroyer-container-vertical')
+			submarine.classList.toggle('submarine-container-vertical')
+			cruiser.classList.toggle('cruiser-container-vertical')
+			battleship.classList.toggle('battleship-container-vertical')
+			carrier.classList.toggle('carrier-container-vertical')
+			isHorizontal = true
+			// console.log(isHorizontal)
+			return
+		}
+	}
+	rotateButton.addEventListener('click', rotate) // allows button to click and run function
 
 
 
